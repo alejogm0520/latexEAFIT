@@ -1,0 +1,113 @@
+% \LaTeX beamer theme Inspira Crea Transforma
+% Basada en la Plantilla institucional de Power Point
+% Autor: Alejandro Gómez M. <agomez13@eafit.edu.co>
+% Junio 2015
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeEAFIT}[2015/06/06 EAFIT beamer theme]
+\RequirePackage{ifthen}
+\RequirePackage[scaled=.85]{helvet}
+
+
+%Dirección 
+\newcommand{\addresstext}{
+		Universidad EAFIT\\
+		\escuela \\
+		\departamento	\\
+		\carrera	\\
+}
+
+\newlength{\@headerdist}
+\setlength{\@headerdist}{5mm}
+\def\escuela{Escuela}
+\def\departamento{Departamento}
+\def\carrera{Carrera}
+
+
+
+\RequirePackage[spanish]{babel}
+\selectlanguage{spanish}
+
+
+
+\mode<presentation>
+
+\setbeamerfont{author}{size=\large}
+\setbeamerfont{date}{size=\large}
+\setbeamerfont{example text}{series=\bfseries}
+\setbeamerfont{section}{series=\bfseries}
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{title}{fg=black}
+\setbeamerfont{title}{series=\bfseries}
+
+% Desactiva iconos de navegación
+\setbeamertemplate{navigation symbols}{}
+
+% frame
+\setbeamercolor{frametitle}{fg=black}
+\setbeamerfont{frametitle}{series=\mdseries,size=\large}
+\setbeamerfont{framesubtitle}{series=\mdseries,size=\large}
+\setbeamertemplate{frametitle}
+{
+	\ifbeamer@plainframe
+	$ $
+	\else
+	\vspace{1cm}
+	\textbf{\insertframetitle}
+	\vspace{.25cm}
+	\fi
+}
+
+
+
+
+% Titulo
+\setbeamertemplate{title page}{
+	\vspace{\@headerdist}
+	\centering
+	\textbf{\large{\inserttitle}}
+	
+	\textbf{\large{\insertsubtitle}}
+	\vfill
+	\vspace{2cm}
+	\textbf{\insertauthor}\\[3mm]
+	\scriptsize
+	\addresstext
+	\normalsize
+}
+
+% Pie de Página
+\setbeamercolor{footline}{fg=white}
+\setbeamertemplate{footline}{
+	\ifnum\c@framenumber=1%Portada
+
+	\else%Normal
+		\begin{beamercolorbox}[ht=1.6cm,wd=\paperwidth]{footlinecolor}
+			\vspace{1.1cm}
+			\hfill
+			\vspace{-1.1cm}
+			\leavevmode\tiny%
+			\hspace*{3.3cm}%
+			
+			\hfill\insertframenumber/\inserttotalframenumber\hspace{5mm}%
+			\vspace{1mm}%
+		\end{beamercolorbox}
+		\fi
+	
+
+}
+
+% Se usan las imagenes de Inspira Crea Transforma
+\setbeamertemplate{background} {
+	\ifnum\c@framenumber=1%Portada
+	\includegraphics[width=\paperwidth,height=\paperheight]{Imagen2}
+	\else%Normal
+	\includegraphics[width=\paperwidth,height=\paperheight]{Imagen1}
+	\fi
+}
+
+
+
+
+\mode
+<all>
