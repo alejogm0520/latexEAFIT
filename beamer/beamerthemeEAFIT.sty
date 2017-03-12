@@ -391,7 +391,7 @@
 		\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
 		{\textbf{Inspira Crea Transforma }}{}
 
-		\vspace{0.5\paperheight}
+		\vspace{0.46\paperheight}
 		%\hspace{3cm}
 
 	\end{beamercolorbox}
@@ -399,14 +399,15 @@
 	\else%Normal
 	\hspace{\beamer@leftmargin}%
 	\begin{beamercolorbox}[ht=\paperheight,wd=\paperwidth, center]{Portada2}
-		\vspace{0.85\paperheight}
-	\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-0.300000, xscale=0.300000, inner sep=0pt, outer sep=0pt]
+
+	\begin{tikzpicture}[inner sep=0pt, outer sep=0pt]
 	
-	\draw[draw=bline, fill=bline,rounded corners=0.0000cm] (0.0000,1110) rectangle
-	(1603.3810,1280.0000);
-	\draw[draw=decoration,fill=decoration,rounded corners=0.0000cm] (780,1110)
-	rectangle (1602.6272,1115);
-	\node[ text=logo] at (385,1200){				\Large
+	\draw[draw=bline, fill=bline,rounded corners=0.0000cm] (0,\paperheight-1.55cm) rectangle
+	(\paperwidth,\paperheight);
+	
+	\draw[draw=decoration,fill=decoration,rounded corners=0.0000cm] (0.5\paperwidth,\paperheight)
+	rectangle (\paperwidth,\paperheight-0.07cm);
+	\node[ text=logo] at (3.3cm,\paperheight-0.85cm){				\Large
 		
 		\ifthenelse{\equal{\idioma}{EN}}
 		{\textbf{Inspire Create Transform}}{}
