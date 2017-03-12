@@ -1,17 +1,55 @@
 % \LaTeX beamer theme Inspira Crea Transforma
 % Basada en la Plantilla institucional de Power Point
 % Autor: Alejandro Gómez M. <agomez13@eafit.edu.co>
-% Abril 2016
-% Version 3.1
+% Marzo 2017
+% Version 3.3
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{beamerthemeEAFIT}[2015/06/06 EAFIT beamer theme]
 
 \RequirePackage{ifthen}
-\RequirePackage[scaled=.9]{helvet}
+\RequirePackage{helvet}
 \RequirePackage{xcolor}
 \RequirePackage{tikz}
 \RequirePackage[spanish, english]{babel}
+
+\def\beamer@EAFIT@language{EN}
+\DeclareOptionBeamer{language}{\def\beamer@EAFIT@language{#1}}
+\def\beamer@EAFIT@color{white}
+\DeclareOptionBeamer{color}{\def\beamer@EAFIT@color{#1}}
+\ProcessOptionsBeamer
+
+\definecolor{blu}{RGB}{1,0,102}
+\definecolor{decoration}{RGB}{10,164,216}
+
+\ifthenelse{\equal{\beamer@EAFIT@color}{white}}
+{
+	\definecolor{background}{RGB}{255, 255, 255}
+	\definecolor{logo}{RGB}{255, 255, 255}
+	\definecolor{bline}{RGB}{1,0,102}
+	\definecolor{fontc}{RGB}{1,0,102}
+	}{
+	\ifthenelse{\equal{\beamer@EAFIT@color}{blue}}
+	{
+			\definecolor{background}{RGB}{1,0,102}
+			\definecolor{logo}{RGB}{1,0,102}
+			\definecolor{bline}{RGB}{255, 255, 255}
+			\definecolor{fontc}{RGB}{255, 255, 255}
+		}{
+		\ifthenelse{\equal{\beamer@EAFIT@color}{blue2}}
+		{	\definecolor{background}{RGB}{1,0,102}
+			\definecolor{logo}{RGB}{255, 255, 255}
+			\definecolor{bline}{RGB}{1,0,102}
+			\definecolor{fontc}{RGB}{255, 255, 255}
+			}{
+				\definecolor{background}{RGB}{255, 255, 255}
+				\definecolor{logo}{RGB}{255, 255, 255}
+				\definecolor{bline}{RGB}{1,0,102}
+				\definecolor{fontc}{RGB}{1,0,102}
+			}
+		}
+	}
+
 
 
 %Dirección 
@@ -266,10 +304,6 @@
 \def\idioma{ES}
 
 
-\definecolor{azul}{RGB}{34, 54,117}
-\definecolor{logo}{RGB}{255, 255, 255}
-\definecolor{franja}{RGB}{30,160,208}
-
 
 
 
@@ -280,16 +314,16 @@
 \setbeamerfont{date}{size=\large}
 \setbeamerfont{example text}{series=\bfseries}
 \setbeamerfont{section}{series=\bfseries}
-\setbeamercolor{structure}{fg=black}
-\setbeamercolor{title}{fg=black}
+\setbeamercolor{structure}{fg=fontc}
+\setbeamercolor{title}{fg=fontc}
 \setbeamerfont{title}{series=\bfseries}
-
+\setbeamercolor{normal text}{fg=fontc}
 % Desactiva iconos de navegación
 \setbeamertemplate{navigation symbols}{}
 
 
 % frame
-\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{frametitle}{fg=fontc}
 \setbeamerfont{frametitle}{series=\mdseries,size=\large}
 \setbeamerfont{framesubtitle}{series=\mdseries,size=\large}
 
@@ -320,7 +354,7 @@
 }
 
 % Pie de Página
-\setbeamercolor{footline}{fg=white}
+\setbeamercolor{footline}{fg=logo}
 \setbeamertemplate{footline}{
 	\ifnum\c@framenumber=1%Portada
 	
@@ -340,7 +374,8 @@
 }
 
 
-\setbeamercolor{Portada}{fg=logo,bg=azul}
+\setbeamercolor{Portada}{fg=white,bg=blu}
+\setbeamercolor{Portada2}{fg=logo,bg=background}
 
 \setbeamertemplate{background} {
 	\ifnum\c@framenumber=1%Portada
@@ -351,9 +386,9 @@
 
 		\huge
 
-		\ifthenelse{\equal{\idioma}{EN}}
+		\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
 		{\textbf{Inspire Create Transform}}{}
-		\ifthenelse{\equal{\idioma}{ES}}
+		\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
 		{\textbf{Inspira Crea Transforma }}{}
 
 		\vspace{0.5\paperheight}
@@ -362,15 +397,16 @@
 	\end{beamercolorbox}
 		
 	\else%Normal
-	\begin{beamercolorbox}{Portada2}
+	\hspace{\beamer@leftmargin}%
+	\begin{beamercolorbox}[ht=\paperheight,wd=\paperwidth, center]{Portada2}
 		\vspace{0.85\paperheight}
 	\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-0.300000, xscale=0.300000, inner sep=0pt, outer sep=0pt]
 	
-	\draw[draw=azul, fill=azul,rounded corners=0.0000cm] (0.0000,1082.3810) rectangle
+	\draw[draw=bline, fill=bline,rounded corners=0.0000cm] (0.0000,1110) rectangle
 	(1603.3810,1280.0000);
-	\draw[draw=franja,fill=franja,rounded corners=0.0000cm] (780,1082.3446)
-	rectangle (1602.6272,1094.5667);
-	\node[ text=logo] at (370.0000,1177.3810){				\Large
+	\draw[draw=decoration,fill=decoration,rounded corners=0.0000cm] (780,1110)
+	rectangle (1602.6272,1115);
+	\node[ text=logo] at (385,1200){				\Large
 		
 		\ifthenelse{\equal{\idioma}{EN}}
 		{\textbf{Inspire Create Transform}}{}
@@ -381,7 +417,6 @@
 	\end{beamercolorbox}	
 	\fi
 }
-
 
 
 
