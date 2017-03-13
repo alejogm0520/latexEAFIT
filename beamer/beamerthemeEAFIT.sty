@@ -12,15 +12,18 @@
 \RequirePackage{xcolor}
 \RequirePackage{tikz}
 \RequirePackage[spanish, english]{babel}
-
+\def\beamer@EAFIT@fontc{none}
 \def\beamer@EAFIT@language{EN}
 \DeclareOptionBeamer{language}{\def\beamer@EAFIT@language{#1}}
 \def\beamer@EAFIT@color{white}
 \DeclareOptionBeamer{color}{\def\beamer@EAFIT@color{#1}}
+\DeclareOptionBeamer{fontc}{\def\beamer@EAFIT@fontc{#1}}
 \ProcessOptionsBeamer
 
 \definecolor{blu}{RGB}{1,0,102}
 \definecolor{decoration}{RGB}{10,164,216}
+
+
 
 \ifthenelse{\equal{\beamer@EAFIT@color}{white}}
 {
@@ -50,7 +53,7 @@
 		}
 	}
 
-
+\ifthenelse{\equal{\beamer@EAFIT@fontc}{black}}{\definecolor{fontc}{RGB}{0,0,0}}{}
 
 %Dirección 
 \newcommand{\addresstext}{
@@ -409,10 +412,10 @@
 	rectangle (\paperwidth,\paperheight-0.07cm);
 	\node[ text=logo] at (3.3cm,\paperheight-0.85cm){				\Large
 		
-		\ifthenelse{\equal{\idioma}{EN}}
+		\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
 		{\textbf{Inspire Create Transform}}{}
-		\ifthenelse{\equal{\idioma}{ES}}
-		{\textbf{Inspira Crea Transforma }}{}};
+		\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
+		{\textbf{Inspira Crea Transforma}}{}};
 	
 	\end{tikzpicture}
 	\end{beamercolorbox}	
