@@ -23,8 +23,6 @@
 \definecolor{blu}{RGB}{1,0,102}
 \definecolor{decoration}{RGB}{10,164,216}
 
-
-
 \ifthenelse{\equal{\beamer@EAFIT@color}{white}}
 {
 	\definecolor{background}{RGB}{255, 255, 255}
@@ -55,12 +53,12 @@
 
 \ifthenelse{\equal{\beamer@EAFIT@fontc}{black}}{\definecolor{fontc}{RGB}{0,0,0}}{}
 
-%Dirección 
+% Dirección
 \newcommand{\addresstext}{
-		Universidad EAFIT\\
-		\escuela \\
-		\departamento	\\
-		\carrera	\\
+  Universidad EAFIT\\
+  \escuela \\
+  \departamento	\\
+  \carrera \\
 }
 
 \logo{
@@ -69,7 +67,7 @@
 	\begin{scope}[shift={(-101.16415,-607.13358)}]
 	\end{scope}
 	\begin{scope}[shift={(-101.16415,-607.13358)}]
-	\path[fill=logo] (289.1749,619.9822) .. controls (291.2908,619.9822) and
+        \path[fill=logo] (289.1749,619.9822) .. controls (291.2908,619.9822) and
 	(292.8439,618.1409) .. (292.8439,615.6328) .. controls (292.8439,613.6993) and
 	(290.9678,611.5513) .. (289.2791,611.5513) .. controls (287.9236,611.5513) and
 	(287.5962,612.5040) .. (287.4696,616.8206) .. controls (287.3776,619.9492) and
@@ -290,12 +288,8 @@
 	(160.9515,685.8976) .. controls (158.9685,686.0530) and (154.7776,686.3334) ..
 	(151.6380,686.5210) .. controls (141.2940,687.1384) and (117.2563,689.3393) ..
 	(108.7387,690.4488) -- cycle;
-	
 	\end{scope}
-	
-	
-	\end{tikzpicture}
-	
+        \end{tikzpicture}
 	\hspace{0.2cm}}
 
 \newlength{\@headerdist}
@@ -306,12 +300,7 @@
 \def\carrera{Carrera}
 \def\idioma{ES}
 
-
-
-
-
 \mode<presentation>
-
 
 \setbeamerfont{author}{size=\large}
 \setbeamerfont{date}{size=\large}
@@ -325,55 +314,52 @@
 \setbeamertemplate{navigation symbols}{}
 
 
-% frame
+% Frame
 \setbeamercolor{frametitle}{fg=fontc}
 \setbeamerfont{frametitle}{series=\mdseries,size=\large}
 \setbeamerfont{framesubtitle}{series=\mdseries,size=\large}
 
-\setbeamertemplate{frametitle}
-{
-	\ifbeamer@plainframe
-	$ $
-	\else
-	\vspace{1cm}
-	\textbf{\insertframetitle}
-	\vspace{.25cm}
-	\fi
+\setbeamertemplate{frametitle}{%
+  \ifbeamer@plainframe%
+  $ $%
+  \else%
+  \vspace{1cm}%
+  \textbf{\insertframetitle}%
+  \vspace{.25cm}%
+  \fi%
 }
 
 % Titulo
-\setbeamertemplate{title page}{
-	\vspace{\@headerdist}
-	\centering
-	\textbf{\large{\inserttitle}}
-	
-	\textbf{\large{\insertsubtitle}}
-	\vfill
-	\vspace{2cm}
-	\textbf{\insertauthor}\\[3mm]
-	\scriptsize
-	\addresstext
-	\normalsize
+\setbeamertemplate{title page}{%
+  \vspace{\@headerdist}%
+  \centering%
+  \textbf{\large{\inserttitle}}%
+
+  \textbf{\large{\insertsubtitle}}%
+  \vfill%
+  \vspace{2cm}%
+  \textbf{\insertauthor}\\[3mm]%
+  \scriptsize%
+  \addresstext%
+  \normalsize%
 }
 
-% Pie de Página
+% Pie de página
 \setbeamercolor{footline}{fg=logo}
-\setbeamertemplate{footline}{
-	\ifnum\c@framenumber=1%Portada
-	
-	
-	\else%Normal
-		\begin{beamercolorbox}[ht=1.6cm,wd=\paperwidth]{footlinecolor}
-			\vspace{1.1cm}
-			\hfill
-			\vspace{-1.1cm}
-			\leavevmode\tiny%
-			\hspace*{3.3cm}%
-			
-			\hfill\insertframenumber/\inserttotalframenumber\hspace{5mm}%
-			\vspace{1mm}%
-		\end{beamercolorbox}
-		\fi
+\setbeamertemplate{footline}{%
+  \ifnum\c@framenumber=1 % Portada
+
+  \else % Normal
+  \begin{beamercolorbox}[ht=1.6cm,wd=\paperwidth]{footlinecolor}
+    \vspace{1.1cm}%
+    \hfill%
+    \vspace{-1.1cm}%
+    \leavevmode\tiny%
+    \hspace*{3.3cm}%
+    \hfill\insertframenumber/\inserttotalframenumber\hspace{5mm}%
+    \vspace{1mm}%
+  \end{beamercolorbox}
+  \fi
 }
 
 
@@ -381,8 +367,8 @@
 \setbeamercolor{Portada2}{fg=logo,bg=background}
 
 \setbeamertemplate{background} {
-	\ifnum\c@framenumber=1%Portada
-	
+	\ifnum\c@framenumber=1 % Portada
+
 	\hspace{\beamer@leftmargin}%
 
 	\begin{beamercolorbox}[ht=\paperheight,wd=\paperwidth, center]{Portada}
@@ -398,31 +384,29 @@
 		%\hspace{3cm}
 
 	\end{beamercolorbox}
-		
-	\else%Normal
+
+	\else % Normal
 	\hspace{\beamer@leftmargin}%
 	\begin{beamercolorbox}[ht=\paperheight,wd=\paperwidth, center]{Portada2}
 
 	\begin{tikzpicture}[inner sep=0pt, outer sep=0pt]
-	
+
 	\draw[draw=bline, fill=bline,rounded corners=0.0000cm] (0,\paperheight-1.55cm) rectangle
 	(\paperwidth,\paperheight);
-	
+
 	\draw[draw=decoration,fill=decoration,rounded corners=0.0000cm] (0.5\paperwidth,\paperheight)
 	rectangle (\paperwidth,\paperheight-0.07cm);
 	\node[ text=logo] at (3.3cm,\paperheight-0.85cm){				\Large
-		
+
 		\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
 		{\textbf{Inspire Create Transform}}{}
 		\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
 		{\textbf{Inspira Crea Transforma}}{}};
-	
+
 	\end{tikzpicture}
-	\end{beamercolorbox}	
+	\end{beamercolorbox}
 	\fi
 }
-
-
 
 \mode
 <all>
