@@ -379,8 +379,19 @@
 		{\textbf{Inspire Create Transform}}{}
 		\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
 		{\textbf{Inspira Crea Transforma }}{}
-
-		\vspace{0.46\paperheight}
+		
+		\vspace{0.34\paperheight}
+		\hspace{-0.75\paperwidth}
+		\begin{tikzpicture}[inner sep=15pt, inner xsep=-50cm]
+		
+		\node[text=gray!70] at (-10, 0){			
+			\fontsize{5}{5}{
+			\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
+			{\textbf{Vigilada Mineducaci\'on}}{}
+			\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
+			{\textbf{Vigilada Mineducaci\'on}}{}}};
+		
+		\end{tikzpicture}
 		%\hspace{3cm}
 
 	\end{beamercolorbox}
@@ -396,13 +407,18 @@
 
 	\draw[draw=decoration,fill=decoration,rounded corners=0.0000cm] (0.5\paperwidth,\paperheight)
 	rectangle (\paperwidth,\paperheight-0.07cm);
-	\node[ text=logo] at (3.3cm,\paperheight-0.85cm){				\Large
+	\node[ text=logo] at (2.6cm,\paperheight-0.85cm){			\fontsize{10}{10}{
 
 		\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
 		{\textbf{Inspire Create Transform}}{}
 		\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
-		{\textbf{Inspira Crea Transforma}}{}};
-
+		{\textbf{Inspira Crea Transforma}}{}} };
+		\node[text=gray!70] at (6cm,\paperheight-0.85cm){			
+		\fontsize{5}{5}{ $\mid$
+			\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
+			{\textbf{Vigilada Mineducaci\'on}}{}
+			\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
+			{\textbf{Vigilada Mineducaci\'on}}{}}};
 	\end{tikzpicture}
 	\end{beamercolorbox}
 	\fi
