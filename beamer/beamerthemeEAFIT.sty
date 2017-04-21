@@ -11,7 +11,7 @@
 \RequirePackage{helvet}
 \RequirePackage{xcolor}
 \RequirePackage{tikz}
-\RequirePackage[spanish, english]{babel}
+
 \def\beamer@EAFIT@fontc{none}
 \def\beamer@EAFIT@language{EN}
 \DeclareOptionBeamer{language}{\def\beamer@EAFIT@language{#1}}
@@ -298,7 +298,12 @@
 \def\escuela{$ $}
 \def\departamento{$ $}
 \def\carrera{$ $}
-\def\idioma{ES}
+
+\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
+{\RequirePackage[english]{babel}}{}
+\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
+{\RequirePackage[spanish]{babel}}{}
+
 
 \mode<presentation>
 
