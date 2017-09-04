@@ -1,0 +1,190 @@
+\documentclass[a0paper,portrait, 25pt]{baposter}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault} % for text
+\usepackage[helvet]{sfmath} % for math
+\usepackage[T1]{fontenc}
+\usepackage[super,sort&compress]{natbib}
+\usepackage{caption}
+\hyphenation{fi-gu-re stu-died di-fferent figure eva-lua-ted}
+\captionsetup{
+  font=small,% set font size to footnotesize
+  labelfont=bf % bold label (e.g., Figure 3.2) font
+}
+
+\usepackage{array,booktabs}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+
+\selectcolormodel{RGB}
+
+\definecolor{blueafit}{RGB}{1, 0, 102}% 
+\definecolor{lblueafit}{RGB}{10, 164, 216} % lighter blue
+
+
+\usepackage{enumitem}
+
+\setlist{%
+  topsep=0pt,% set space before and after list
+  noitemsep,% remove space between items
+  labelindent=\parindent,% set the label indentation to the paragraph indentation
+  leftmargin=*,% remove the left margin
+  font=\color{lblueafit}\normalfont, %set the colour of all bullets, numbers and descriptions to aaublue1
+}
+% use set<itemize,enumerate,description> if you have an older latex distribution
+\setitemize[1]{label={\raise1.25pt\hbox{$\blacktriangleright$}}}
+\setitemize[2]{label={\scriptsize\raise1.25pt\hbox{$\blacktriangleright$}}}
+\setitemize[3]{label={\raise1.25pt\hbox{$\star$}}}
+\setitemize[4]{label={-}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Misc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% change/remove some names
+\addto{\captionsenglish}{
+  %remove the title of the bibliograhpy
+  \renewcommand{\refname}{\vspace{-0.7em}}
+  %change Figure to Fig. in figure captions
+  \renewcommand{\figurename}{Fig.}
+}
+% create links
+\usepackage{url}
+%note that the hyperref package is currently incompatible with the baposter class
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\alert}[1]{{\color{lblueafit}#1}}
+
+
+\usepackage{lipsum}
+
+
+\begin{document}
+
+% set the background of the poster
+
+\background{
+  \begin{tikzpicture}[remember picture,overlay]%
+    %the poster background color
+    \fill[fill=white] (current page.north west) rectangle (current page.south east);
+    %%
+	\fill [fill=blueafit] (current page.south east) rectangle ([yshift=3cm] current page.south west);	
+	\fill [fill=lblueafit] ([xshift=11.7cm, yshift=2.7cm] current page.south west) rectangle ([xshift=30cm, yshift=3cm] current page.south west);
+	
+   \node[text=white] at ([yshift=1.4cm, xshift=5.3cm] current page.south west) {\huge{\textbf{Inspira Crea Transforma}}}; 
+    %the header
+    \node (logo) at ([xshift=21cm, yshift=1.3cm] current page.south west)
+    {\includegraphics[width=.2\textwidth]{eafitblanco.png}};
+    \fill [fill=white] (current page.north west) rectangle ([yshift=-5.5cm] current page.north east); 
+  \end{tikzpicture}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General poster setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{poster}{
+  %general options for the poster
+  grid=false,
+  columns=3,
+  colspacing=3mm,
+  headerheight=0.1\textheight,
+  background=user,
+  eyecatcher=true,
+  headerborder=open,
+  borderColor=white,
+  headershape=rectangle,
+  headershade=plain,
+  headerColorOne=white,
+  textborder=rectangle,
+  boxshade=plain,
+  boxColorOne=white,
+  headerFontColor=blueafit,
+  headerfont=\Large\sf\bf,
+  linewidth=1pt
+}
+
+%the poster title
+{\color{blueafit}
+\vspace{0cm}
+Poster Template \textit{Baposter}
+ \vspace{2cm}
+}
+%the author(s)
+{\color{blueafit}\normalsize 
+	 \vspace{-2cm}
+  \vspace{1em} 
+  Alejandro~G\'omez,$^1$
+
+\vspace*{0.3cm}
+  \scriptsize{
+  	$^1$ Mathematical Modelling Research Group, Universidad EAFIT.
+}
+}
+%the logo (the logo on the right)
+{ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% the actual content of the poster begins here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{-1cm}
+\begin{posterbox}[name=abstract, span=3 ,column=0,row=0]{}
+\lipsum[1]
+ \begin{center}
+\textbf{\textit{keywords}} - 	\textit{Latex, Poster, Grimmat}
+ \end{center}
+
+\end{posterbox}
+
+\begin{posterbox}[name=Introduction,column=0,below=abstract]{Introduction}
+\lipsum[2]
+\end{posterbox}
+
+\begin{posterbox}[name=Methodology,column=0,below=Introduction]{Methodology}
+\lipsum[3]
+\end{posterbox}
+
+\begin{posterbox}[name=diagram,span=2, column=0,below=Methodology]{}
+\begin{centering}
+%\includegraphics{test.eps}
+\end{centering}
+\end{posterbox}
+
+\begin{posterbox}[name=install,column=1,below=abstract]{}
+\lipsum[4 - 6]
+\end{posterbox}
+
+\begin{posterbox}[name=feedback,column=2,below=abstract]{Results}
+\lipsum[7]
+
+
+\end{posterbox}
+
+\begin{posterbox}[name=conclusion,column=2,below=feedback]{Conclusion}
+\lipsum[8]
+\end{posterbox}
+
+
+
+\begin{posterbox}[name=refs,column=2,below=conclusion,above=bottom]{References}
+
+\tiny
+\bibliographystyle{IEEEtran}
+
+
+\begingroup
+\setlength{\bibsep}{1pt}
+\bibliography{mybib}
+\endgroup
+
+\end{posterbox}
+
+\end{poster}
+\end{document}
