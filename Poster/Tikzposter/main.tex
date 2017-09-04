@@ -1,0 +1,192 @@
+\documentclass[25pt, postrait, a0paper, margin=0mm, innermargin=15mm,
+blockverticalspace=1mm, colspace=5mm, subcolspace=1mm ]{tikzposter}  % See Section 3
+%\geometry{paperwidth=39.4in,paperheight=55.7in}
+\usepackage[utf8]{inputenc}
+\renewcommand\refname{\vskip -2.5cm}
+\usepackage{fix-cm}
+\usepackage{pgfplots}
+\title{\fontsize{72}{72}\selectfont {\textbf{\parbox{\linewidth}{\centering  Poster Template \textit{Tikzposter}}} }}
+\usepackage{helvet}
+\usepackage{multicol}
+\renewcommand{\familydefault}{\sfdefault} % for text
+\usepackage[helvet]{sfmath} % for math
+\hyphenation{res-pues-ta psico-ló-gicos ma-ni-fies-tan des-com-pone va-li-da-ción sa-cri-fi-car}
+\usepackage{lipsum}
+\institute{$^1$ Mathematical Modelling Research, Universidad EAFIT} % See Section 4.1
+\author{Alejandro~G\'omez,$^1$}   
+\tikzposterlatexaffectionproofoff
+
+\titlegraphic{$ $}
+
+\definecolor{blueafit}{HTML}{010066}
+\definecolor{lblueafit}{HTML}{0AA4D8}
+
+\definecolorstyle{eafitcolor}{
+	\definecolor{blueafit}{HTML}{010066}
+}{
+% Background Colors
+\colorlet{backgroundcolor}{white}
+\colorlet{framecolor}{white}
+% Title Colors
+\colorlet{titlefgcolor}{blueafit}
+\colorlet{titlebgcolor}{white}
+% Block Colors
+\colorlet{blocktitlebgcolor}{white}
+\colorlet{blocktitlefgcolor}{blueafit}
+\colorlet{blockbodybgcolor}{white}
+\colorlet{blockbodyfgcolor}{black}
+% Innerblock Colors
+\colorlet{innerblocktitlebgcolor}{white}
+\colorlet{innerblocktitlefgcolor}{blueafit}
+\colorlet{innerblockbodybgcolor}{white}
+\colorlet{innerblockbodyfgcolor}{black}
+% Note colors
+\colorlet{notefgcolor}{black}
+\colorlet{notebgcolor}{white}
+\colorlet{notefrcolor}{white}
+}
+
+\definebackgroundstyle{eafitposter}{
+\fill [fill=blueafit] (bottomleft) rectangle ([yshift=0.08\textheight, xshift=\textwidth] bottomleft);	
+\fill [fill=lblueafit] ([yshift=0.07\textheight, xshift=0.5\textwidth] bottomleft) rectangle ([yshift=0.08\textheight, xshift=\textwidth] bottomleft);	
+\node (logo) at ([xshift=0.9\textwidth, yshift=0.04\textwidth] bottomleft)
+    {\includegraphics[width=.2\textwidth]{eafitblanco.png}};
+\node[text=white] at ([xshift=0.5\textwidth, yshift=1.5cm] bottomleft) { 	\normalsize{\textbf{GRIMMAT}}};
+\begin{scope}[scale=1.2,transform shape]
+\node[text=white] at ([xshift=0.185\textwidth, yshift=0.04\textwidth] bottomleft) { 	\Huge{\textbf{Inspira Crea Transforma}}};
+\end{scope}
+} 
+
+\definetitlestyle{eafittitle}{
+	width=600mm, roundedcorners=30, linewidth=0.4cm, innersep=1cm,
+	titletotopverticalspace=15mm, titletoblockverticalspace=10mm,
+	titlegraphictotitledistance=10pt, titletextscale=1
+}{\begin{scope}[line width=\titlelinewidth, rounded corners=\titleroundedcorners]
+	\draw[color=framecolor, fill=titlebgcolor]%
+	(\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop);
+\end{scope}}
+
+\usecolorstyle{eafitcolor}
+\usebackgroundstyle{eafitposter}
+\usetitlestyle{eafittitle}
+
+\settitle{ \centering \vbox{
+		\Huge
+		\@titlegraphic \\[\TP@titlegraphictotitledistance] \centering
+		\color{titlefgcolor} {\bfseries \Huge \sc \@title \par}
+		\vspace*{0.5em}
+		{\huge \@author \par} \vspace*{0.5em} {\LARGE \@institute}
+		}
+		
+		}
+
+
+\useblockstyle{Default}
+
+
+\useinnerblockstyle{Table}
+\usenotestyle{Default}
+
+\begin{document}
+\maketitle[width=\textwidth,titletotopverticalspace=0cm
+,
+titletoblockverticalspace=2cm,titlegraphictotitledistance=2cm]
+
+\vspace*{-1cm}
+\block{}{
+\fontsize{40}{40}\selectfont
+\lipsum[1]
+\begin{center}
+		\textbf{\textit{keywords}} - 	\textit{Latex, Poster, Grimmat}
+	\end{center}}  % See Section 4.2
+\begin{columns}  % See Section 4.4
+
+\column{0.33}  % See Section 4.4
+
+\block{Introducción}{
+\fontsize{40}{40}\selectfont
+\lipsum[2 ]	}
+\block{Metodología}{
+	\fontsize{40}{40}\selectfont
+	\lipsum[3]
+	
+	}
+\column{0.33}  % See Section 4.4
+
+
+\block{}{
+	\fontsize{40}{40}\selectfont
+
+}	
+	
+	\block{Resultados}{
+\fontsize{40}{40}\selectfont
+	\lipsum[4]
+	\pgfplotstableread[col sep=comma,header=true, row sep=crcr]{
+		Canal, mn150, mn300, mn600\\
+		1, 4.676,  6.6666667,   7.012\\  
+		2, 14.67,  12.33333333,   8.846666667\\  
+		3,  7.33333333,  11,  11.666667\\
+		4,  6,  8.67,   8.1333333\\
+		5,  2,  4.33,   5.51666667\\
+		6,  4,  5,   5.34333333\\
+		7,  0.66666667,   3,   3.666667\\
+		8,  6,  5.33,   5.84\\
+		9, 12.66666667,  7.6666667,   7.8333333\\
+		10,  3.33,  5,   6.3\\
+		11,  12.667,  9.33333333,   9.01\\
+		12,  2.66666667,   2.33,   4.5066667\\
+		13, 11.33,  9.67,   7.01\\
+		14, 12,  9.67,   9.18\\
+	}\data
+	
+	\begin{tikzpicture}     
+	\begin{axis}[    
+	width=0.9\linewidth,
+	height=12cm,
+	ytick={0, 2.5,5, 7.5,10,12.5,15},    
+	ymin=0,
+	ymax=16,    
+	xtick={1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14},    
+	grid=major,
+	xlabel={Canal},
+	ylabel={Porcentaje (\%)},
+	x label style={at={(axis description cs:0.5,-0.1)},anchor=north},  
+	ticklabel style = {font=\large},	
+	 y label style={at={(axis description cs:-0.1,.5)}},
+	enlarge x limits=0.01,
+	legend style={at={(0.5,1)}, anchor=north,legend columns=3},
+	]
+	\addplot[color=teal, mark=*, style=solid, line width=3pt] table [y=mn150, x=Canal] {\data};
+	\addplot[color=orange, mark=diamond*, style=solid, line width=3pt] table [y=mn300, x=Canal] {\data};
+	\addplot[color=violet, mark=pentagon*, style=solid, line width=3pt] table [y=mn600, x=Canal] {\data};
+	\legend{150, 300, 600}
+	\end{axis}
+	\end{tikzpicture}
+	\lipsum[5]
+}	
+\column{0.33}
+
+
+\block{}{
+\fontsize{40}{40}\selectfont	
+	\lipsum[6]
+	}
+	
+	\block{Conclusiones}{
+		\fontsize{40}{40}\selectfont
+	\lipsum[8]
+
+	}
+	
+	\block{Referencias}{
+				\fontsize{20}{20}\selectfont
+				\bibliographystyle{IEEEtran}
+				\bibliography{main}
+			}
+		
+\end{columns}
+
+
+
+\end{document}
