@@ -61,6 +61,26 @@
   \carrera \\
 }
 
+% Adding Thanks
+\renewcommand{\thanks}{
+\begin{frame}[plain,noframenumbering]
+	\begin{beamercolorbox}[ht=\paperheight,wd=\paperwidth, center]{Portada}
+		
+		\Large
+		
+		\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
+		{\textbf{Thanks}}{}
+		\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
+		{\textbf{Gracias}}{}
+		
+		\vspace{0.5\paperheight}
+		%\hspace{3cm}
+		
+	\end{beamercolorbox}
+\end{frame}	
+}
+
+
 \logo{
 	\vspace{-1.58cm}
 	\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-0.300000, xscale=0.300000, inner sep=0pt, outer sep=0pt]
