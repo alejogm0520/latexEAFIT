@@ -1,16 +1,25 @@
 % \LaTeX beamer theme Inspira Crea Transforma
 % Basada en la Plantilla institucional de Power Point
 % Autor: Alejandro Gómez M. <agomez13@eafit.edu.co>
-% Marzo 2017
-% Version 3.3
+% Septiembre 2017
+% Version 3.7
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{beamerthemeEAFIT}[2015/06/06 EAFIT beamer theme]
 
 \RequirePackage{ifthen}
-\RequirePackage{helvet}
 \RequirePackage{xcolor}
 \RequirePackage{tikz}
+
+% 
+\RequirePackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Justificación 
+\RequirePackage{ragged2e}
+\justifying
+
+\RequirePackage[utf8]{inputenc}
 
 \def\beamer@EAFIT@fontc{none}
 \def\beamer@EAFIT@language{EN}
