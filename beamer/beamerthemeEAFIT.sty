@@ -65,19 +65,19 @@
 \renewcommand{\thanks}{
 \begin{frame}[plain,noframenumbering]
 	\begin{beamercolorbox}[ht=\paperheight,wd=\paperwidth, center]{Portada}
-		
+
 		\Large
-		
+
 		\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
 		{\textbf{Thanks}}{}
 		\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
 		{\textbf{Gracias}}{}
-		
+
 		\vspace{0.5\paperheight}
 		%\hspace{3cm}
-		
+
 	\end{beamercolorbox}
-\end{frame}	
+\end{frame}
 }
 
 
@@ -372,81 +372,81 @@
 % Footnote
 \setbeamercolor{footline}{fg=logo}
 \setbeamertemplate{footline}{%
-  \ifnum\c@framenumber=1 % Portada
+	\ifbeamer@plainframe%
+    %
+  \else
+	  \ifnum\c@framenumber=1 % Portada
 
-  \else % Normal
-  \begin{beamercolorbox}[ht=1.6cm,wd=\paperwidth]{footlinecolor}
-    \vspace{1.1cm}%
-    \hfill%
-    \vspace{-1.1cm}%
-    \leavevmode\tiny%
-    \hspace*{3.3cm}%
-    \hfill\insertframenumber/\inserttotalframenumber\hspace{5mm}%
-    \vspace{1mm}%
-  \end{beamercolorbox}
+	  \else % Normal
+	  \begin{beamercolorbox}[ht=1.6cm,wd=\paperwidth]{footlinecolor}
+	    \vspace{1.1cm}%
+	    \hfill%
+	    \vspace{-1.1cm}%
+	    \leavevmode\tiny%
+	    \hspace*{3.3cm}%
+	    \hfill\insertframenumber/\inserttotalframenumber\hspace{5mm}%
+	    \vspace{1mm}%
+	  \end{beamercolorbox}
+	  \fi
   \fi
 }
-
 
 \setbeamercolor{Portada}{fg=white,bg=blu}
 \setbeamercolor{Portada2}{fg=logo,bg=background}
 
 \setbeamertemplate{background} {
-	\ifnum\c@framenumber=1 % Portada
-
-	\hspace{\beamer@leftmargin}%
-
-	\begin{beamercolorbox}[ht=\paperheight,wd=\paperwidth, center]{Portada}
-
-		\huge
-
-		\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
-		{\textbf{Inspire Create Transform}}{}
-		\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
-		{\textbf{Inspira Crea Transforma }}{}
-		
-		\vspace{0.34\paperheight}
-		\hspace{-0.75\paperwidth}
-		% Vigilada Mineducación
-		\begin{tikzpicture}[inner sep=15pt, inner xsep=-50cm]
-		
-		\node[text=gray!70] at (-10, 0){			
-			\fontsize{5}{5}{
+	\ifbeamer@plainframe%
+    %
+  \else
+		\ifnum\c@framenumber=1 % Portada
+		\hspace{\beamer@leftmargin}%
+		\begin{beamercolorbox}[ht=\paperheight,wd=\paperwidth, center]{Portada}
+			\huge
 			\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
-			{\textbf{Vigilada Mineducaci\'on}}{}
+			{\textbf{Inspire Create Transform}}{}
 			\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
-			{\textbf{Vigilada Mineducaci\'on}}{}}};
-		
+			{\textbf{Inspira Crea Transforma }}{}
+
+			\vspace{0.34\paperheight}
+			\hspace{-0.75\paperwidth}
+			% Vigilada Mineducación
+			\begin{tikzpicture}[inner sep=15pt, inner xsep=-50cm]
+
+			\node[text=gray!70] at (-10, 0){
+				\fontsize{5}{5}{
+				\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
+				{\textbf{Vigilada Mineducaci\'on}}{}
+				\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
+				{\textbf{Vigilada Mineducaci\'on}}{}}};
+			\end{tikzpicture}
+		\end{beamercolorbox}
+
+		\else % Normal
+		\hspace{\beamer@leftmargin}%
+		\begin{beamercolorbox}[ht=\paperheight,wd=\paperwidth, center]{Portada2}
+
+		\begin{tikzpicture}[inner sep=0pt, outer sep=0pt]
+
+		\draw[draw=bline, fill=bline,rounded corners=0.0000cm] (0,\paperheight-1.55cm) rectangle
+		(\paperwidth,\paperheight);
+
+		\draw[draw=decoration,fill=decoration,rounded corners=0.0000cm] (0.5\paperwidth,\paperheight)
+		rectangle (\paperwidth,\paperheight-0.07cm);
+		\node[ text=logo] at (2.6cm,\paperheight-0.85cm){			\fontsize{10}{10}{
+
+			\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
+			{\textbf{Inspire Create Transform}}{}
+			\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
+			{\textbf{Inspira Crea Transforma}}{}} };
+			\node[text=gray!70] at (6cm,\paperheight-0.85cm){
+			\fontsize{5}{5}{ $\mid$
+				\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
+				{\textbf{Vigilada Mineducaci\'on}}{}
+				\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
+				{\textbf{Vigilada Mineducaci\'on}}{}}};
 		\end{tikzpicture}
-		
-
-	\end{beamercolorbox}
-
-	\else % Normal
-	\hspace{\beamer@leftmargin}%
-	\begin{beamercolorbox}[ht=\paperheight,wd=\paperwidth, center]{Portada2}
-
-	\begin{tikzpicture}[inner sep=0pt, outer sep=0pt]
-
-	\draw[draw=bline, fill=bline,rounded corners=0.0000cm] (0,\paperheight-1.55cm) rectangle
-	(\paperwidth,\paperheight);
-
-	\draw[draw=decoration,fill=decoration,rounded corners=0.0000cm] (0.5\paperwidth,\paperheight)
-	rectangle (\paperwidth,\paperheight-0.07cm);
-	\node[ text=logo] at (2.6cm,\paperheight-0.85cm){			\fontsize{10}{10}{
-
-		\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
-		{\textbf{Inspire Create Transform}}{}
-		\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
-		{\textbf{Inspira Crea Transforma}}{}} };
-		\node[text=gray!70] at (6cm,\paperheight-0.85cm){			
-		\fontsize{5}{5}{ $\mid$
-			\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
-			{\textbf{Vigilada Mineducaci\'on}}{}
-			\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
-			{\textbf{Vigilada Mineducaci\'on}}{}}};
-	\end{tikzpicture}
-	\end{beamercolorbox}
+		\end{beamercolorbox}
+		\fi
 	\fi
 }
 
