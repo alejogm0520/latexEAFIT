@@ -61,12 +61,14 @@
 
 \ifthenelse{\equal{\beamer@EAFIT@fontc}{black}}{\definecolor{fontc}{RGB}{0,0,0}}{}
 
+
+\newcommand{\affiliation}[1]{
+\def\address{#1}
+}
+
 % Dirección
 \newcommand{\addresstext}{
-  \eafit \\
-  \escuela \\
-  \departamento	\\
-  \carrera \\
+  \address\\
 }
 
 \renewcommand{\maketitle}{
@@ -332,10 +334,8 @@
 
 \newlength{\@headerdist}
 \setlength{\@headerdist}{5mm}
-\def\eafit{$ $}
-\def\escuela{$ $}
-\def\departamento{$ $}
-\def\carrera{$ $}
+\def\address{$ $}
+
 
 \ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
 {\RequirePackage[english]{babel}}{}
@@ -385,6 +385,7 @@
   \addresstext%
   \normalsize%
 }
+
 
 % Footnote
 \setbeamercolor{footline}{fg=logo}

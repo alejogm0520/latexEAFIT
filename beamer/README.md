@@ -3,6 +3,18 @@
 
 ## Usage
 
+### Affiliation
+
+To specify the affiliation, we can use `\affiliation{...}` command:
+
+```latex
+\affiliation{
+	Universidad EAFIT\\
+	Escuela de Ciencias\\
+	Departamento de Ciencias Matemáticas\\
+	Maestría en Matemáticas Aplicadas}
+```
+
 ### Language
 
 To specify the language of the slides, write this:
