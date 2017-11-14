@@ -53,3 +53,21 @@ the bottom bar in blue.
 Use the option `fontc=black` to set the font color in black. If this
 argument is not given the default color is set depending of the
 color scheme selected.
+
+### Table of contents
+
+This command help to add the Table of Contents (ToC) frame:
+
+```latex
+\makeToC
+```
+
+- The ToC title is  `Outline` when `language=EN`.
+- The ToC title is  `Contenido` when `language=ES`.
+- A custom ToC title is possible through the option:
+
+	```latex
+	\makeToC[Custom Title]
+	```
+
+
