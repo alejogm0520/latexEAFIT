@@ -81,6 +81,17 @@
 	\end{frame}
 }
 
+% Outline Frame
+\newcommand{\makeToC}[1][]{
+	\begin{frame}{\ifthenelse{\equal{#1}{}}{\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}%
+		{Outline}{}%
+		\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}%
+		{Contenido}{}}{#1}%
+	}
+    	\tableofcontents
+	\end{frame}
+}
+
 % Adding Thanks
 \renewcommand{\thanks}{
 \begin{frame}[plain,noframenumbering]
