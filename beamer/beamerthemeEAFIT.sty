@@ -59,6 +59,13 @@
 		}
 	}
 
+% Blocks
+\setbeamercolor{block body}{bg=fontc!10,fg=blu}
+\setbeamercolor{block title}{bg=fontc,fg=background}
+\setbeamertemplate{blocks}[rounded]
+\pgfdeclareverticalshading[lower.bg,upper.bg]{bmb@transition}{200cm}{%
+	color(0pt)=(lower.bg); color(10pt)=(lower.bg); color(4pt)=(upper.bg)}
+
 \ifthenelse{\equal{\beamer@EAFIT@fontc}{black}}{\definecolor{fontc}{RGB}{0,0,0}}{}
 
 
