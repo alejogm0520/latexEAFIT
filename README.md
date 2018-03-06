@@ -1,6 +1,6 @@
 # LaTeX EAFIT
 
-This is an unofficial institutional template of Inspire Create Transform - EAFIT, based on the PowerPoint Slides.
+This is an template of Universidad EAFIT Beamer, based on the official PowerPoint Slides.
 
 ## To do - Beamer:
 
