@@ -4,7 +4,6 @@ This is an template of Universidad EAFIT Beamer, based on the official PowerPoin
 
 ## To do - Beamer:
 
-- Add color scheme for "Blocks".
 - Change "template.tex" for a better example.
 - Improve the quality of the logo.
 - Much more... 
