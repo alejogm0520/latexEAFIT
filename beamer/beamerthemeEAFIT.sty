@@ -37,6 +37,10 @@
 	\definecolor{logo}{RGB}{255, 255, 255}
 	\definecolor{bline}{RGB}{1,0,102}
 	\definecolor{fontc}{RGB}{1,0,102}
+	
+	\setbeamercolor{block body}{bg=fontc!10,fg=blu}
+	\setbeamercolor{block title}{bg=fontc,fg=background}
+	
 	}{
 	\ifthenelse{\equal{\beamer@EAFIT@color}{blue}}
 	{
@@ -44,17 +48,29 @@
 			\definecolor{logo}{RGB}{1,0,102}
 			\definecolor{bline}{RGB}{255, 255, 255}
 			\definecolor{fontc}{RGB}{255, 255, 255}
+			
+			\setbeamercolor{block body}{bg=white,fg=background}
+			\setbeamercolor{block title}{bg=background!20,fg=background}
+			
 		}{
 		\ifthenelse{\equal{\beamer@EAFIT@color}{blue2}}
 		{	\definecolor{background}{RGB}{1,0,102}
 			\definecolor{logo}{RGB}{255, 255, 255}
 			\definecolor{bline}{RGB}{1,0,102}
 			\definecolor{fontc}{RGB}{255, 255, 255}
+			
+			\setbeamercolor{block body}{bg=white,fg=background}
+			\setbeamercolor{block title}{bg=background!20,fg=background}
+			
+			
 			}{
 				\definecolor{background}{RGB}{255, 255, 255}
 				\definecolor{logo}{RGB}{255, 255, 255}
 				\definecolor{bline}{RGB}{1,0,102}
 				\definecolor{fontc}{RGB}{1,0,102}
+				
+				\setbeamercolor{block body}{bg=fontc!10,fg=blu}
+				\setbeamercolor{block title}{bg=fontc,fg=background}
 			}
 		}
 	}
@@ -62,8 +78,7 @@
 
 
 % Blocks
-\setbeamercolor{block body}{bg=fontc!10,fg=blu}
-\setbeamercolor{block title}{bg=fontc,fg=background}
+
 
 \setbeamertemplate{blocks}[rounded]
 \pgfdeclareverticalshading[lower.bg,upper.bg]{bmb@transition}{200cm}{%
