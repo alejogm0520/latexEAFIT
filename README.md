@@ -8,9 +8,10 @@ This is an template of Universidad EAFIT Beamer, based on the official PowerPoin
 - Improve the quality of the logo.
 - Much more... 
 
-## To do - Poster:
+## Poster:
 
-- Change "main.tex" for a better example.
-- Add color scheme.
-- Embed the logo.
-- Much more... 
+The poster templates files move to the repo:
+
+- https://github.com/alejogm0520/latexEAFIT-Poster-1
+
+- https://github.com/alejogm0520/latexEAFIT-Poster-2
