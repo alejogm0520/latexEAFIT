@@ -22,20 +22,29 @@
 
 \def\beamer@EAFIT@fontc{none}
 \def\beamer@EAFIT@language{EN}
+
 \DeclareOptionBeamer{language}{\def\beamer@EAFIT@language{#1}}
 \def\beamer@EAFIT@color{white}
+\def\beamer@EAFIT@cover{white}
+
 \DeclareOptionBeamer{color}{\def\beamer@EAFIT@color{#1}}
+\DeclareOptionBeamer{cover}{\def\beamer@EAFIT@cover{#1}}
 \DeclareOptionBeamer{fontc}{\def\beamer@EAFIT@fontc{#1}}
+
 \ProcessOptionsBeamer
 
 \definecolor{blu}{RGB}{0,0,102}
 \definecolor{decoration}{RGB}{0,169,224}
 
+
+
+
 \ifthenelse{\equal{\beamer@EAFIT@color}{white}}
 {	
 	\newcommand{\ailogo}{./logos/ai_blue.eps}
 	\newcommand{\eafitlogo}{./logos/eafit_blue.eps}
-	\definecolor{background}{RGB}{255, 255, 255}
+	
+	\definecolor{background}{RGB}{255, 255, 255}	
 	\definecolor{logo}{RGB}{255, 255, 255}
 	\definecolor{bline}{RGB}{0,0,102}
 	\definecolor{fontc}{RGB}{0,0,102}
@@ -43,22 +52,28 @@
 	\setbeamercolor{block body}{bg=fontc!10,fg=blu}
 	\setbeamercolor{block title}{bg=fontc,fg=background}
 	
-	}{
+}{
 	\ifthenelse{\equal{\beamer@EAFIT@color}{blue}}
 	{		
+		\newcommand{\ailogo}{./logos/ai_white.eps}
+		\newcommand{\eafitlogo}{./logos/eafit_white.eps}
+		\definecolor{background}{RGB}{0,0,102}
+		\definecolor{logo}{RGB}{0,0,102}
+		\definecolor{bline}{RGB}{255, 255, 255}
+		\definecolor{fontc}{RGB}{255, 255, 255}
+		
+		\setbeamercolor{block body}{bg=white,fg=background}
+		\setbeamercolor{block title}{bg=background!20,fg=background}
+		
+	}{
+	
+		\ifthenelse{\equal{\beamer@EAFIT@color}{blue2}}
+		{	
 			\newcommand{\ailogo}{./logos/ai_white.eps}
 			\newcommand{\eafitlogo}{./logos/eafit_white.eps}
+			
+			
 			\definecolor{background}{RGB}{0,0,102}
-			\definecolor{logo}{RGB}{0,0,102}
-			\definecolor{bline}{RGB}{255, 255, 255}
-			\definecolor{fontc}{RGB}{255, 255, 255}
-			
-			\setbeamercolor{block body}{bg=white,fg=background}
-			\setbeamercolor{block title}{bg=background!20,fg=background}
-			
-		}{
-		\ifthenelse{\equal{\beamer@EAFIT@color}{blue2}}
-		{	\definecolor{background}{RGB}{0,0,102}
 			\definecolor{logo}{RGB}{255, 255, 255}
 			\definecolor{bline}{RGB}{0,0,102}
 			\definecolor{fontc}{RGB}{255, 255, 255}
@@ -67,20 +82,44 @@
 			\setbeamercolor{block title}{bg=background!20,fg=background}
 			
 			
-			}{
-				\definecolor{background}{RGB}{255, 255, 255}
-				\definecolor{logo}{RGB}{255, 255, 255}
-				\definecolor{bline}{RGB}{0,0,102}
-				\definecolor{fontc}{RGB}{0,0,102}
-				
-				\setbeamercolor{block body}{bg=fontc!10,fg=blu}
-				\setbeamercolor{block title}{bg=fontc,fg=background}
-			}
+		}{
+			\newcommand{\ailogo}{./logos/ai_blue.eps}
+			\newcommand{\eafitlogo}{./logos/eafit_blue.eps}
+	
+			\definecolor{background}{RGB}{255, 255, 255}
+			\definecolor{logo}{RGB}{255, 255, 255}
+			\definecolor{bline}{RGB}{0,0,102}
+			\definecolor{fontc}{RGB}{0,0,102}
+			
+			\setbeamercolor{block body}{bg=fontc!10,fg=blu}
+			\setbeamercolor{block title}{bg=fontc,fg=background}
 		}
 	}
+}
 
-
-
+\ifthenelse{\equal{\beamer@EAFIT@cover}{white}}
+{	
+	\newcommand{\pailogo}{./logos/ai_white.eps}
+	\newcommand{\peafitlogo}{./logos/eafit_white.eps}
+	
+	\setbeamercolor{Portada}{fg=blu,bg=white}
+	
+}{
+	\ifthenelse{\equal{\beamer@EAFIT@cover}{blue}}
+	{		
+		\newcommand{\pailogo}{./logos/ai_blue.eps}
+		\newcommand{\peafitlogo}{./logos/eafit_blue.eps}
+		
+		\setbeamercolor{Portada}{fg=white,bg=blu}
+		
+		
+	}{
+		\newcommand{\pailogo}{./logos/ai_white.eps}
+		\newcommand{\peafitlogo}{./logos/eafit_white.eps}
+		
+		\setbeamercolor{Portada}{fg=blu,bg=white}
+	}
+}
 % Blocks
 
 
@@ -210,19 +249,15 @@
 
 	  \else % Normal
 	  \begin{beamercolorbox}[ht=1.6cm,wd=\paperwidth]{footlinecolor}
-	    \vspace{1.1cm}%
-	    \hfill%
-	    \vspace{-1.1cm}%
-	    \leavevmode\tiny%
-	    \hspace*{3.3cm}%
-	    \hfill\insertframenumber/\inserttotalframenumber\hspace{5mm}%
-	    \vspace{1mm}%
+	    \leavevmode%
+	    \hfill \fontsize{0.5}{0.5}{  \insertframenumber/\inserttotalframenumber }\hspace{0.8mm}%
+	    \vspace{0.4mm}%
 	  \end{beamercolorbox}
 	  \fi
   \fi
 }
 
-\setbeamercolor{Portada}{fg=white,bg=blu}
+
 \setbeamercolor{Portada2}{fg=logo,bg=background}
 
 \setbeamertemplate{background} {
@@ -246,15 +281,15 @@
 										\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
 										{\textbf{Vigilada Mineducaci\'on}}{}}};
 				
-				\node[text=white] at (0.5\paperwidth,0.5\paperheight){
+				\node at (0.5\paperwidth,0.5\paperheight){
 					\fontsize{17}{17}{
 						\ifthenelse{\equal{\beamer@EAFIT@language}{EN}}
 										{\textbf{Inspire Create Transform}}{}
 										\ifthenelse{\equal{\beamer@EAFIT@language}{ES}}
 										{\textbf{Inspira Crea Transforma }}{}}};
 				
-				\node at (\paperwidth-12.03mm, 6.95mm) {\includegraphics[width=17mm]{\ailogo}};
-				\node at (12.7531mm, \paperheight-7.6509375mm) {\includegraphics[width=15.81mm]{\eafitlogo}};
+				\node at (\paperwidth-12.03mm, 6.95mm) {\includegraphics[width=17mm]{\pailogo}};
+				\node at (12.7531mm, \paperheight-7.6509375mm) {\includegraphics[width=15.81mm]{\peafitlogo}};
 				
 				\end{tikzpicture}
 				
