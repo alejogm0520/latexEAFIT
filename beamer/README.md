@@ -43,6 +43,21 @@ the bottom bar in white.
 - Use the option `color=blue2` to set the background in blue and
 the bottom bar in blue.
 
+### Cover Color
+
+There are some color schemes by default that user can use:
+
+```latex
+\usetheme[cover=white]{EAFIT}
+```
+
+- Use the option `color=white` to set the background in white and
+the logo and fontc in blue.
+
+- Use the option `color=blue` to set the background in blue and
+the logo and fontc in white.
+
+
 
 ### Font Color
 

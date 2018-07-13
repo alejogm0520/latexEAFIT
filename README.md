@@ -1,11 +1,12 @@
 # LaTeX EAFIT
 
-This is an template of Universidad EAFIT Beamer, based on the official PowerPoint Slides.
+This is an template of Universidad EAFIT Beamer with the Acreditación Institucional logo, based on the official PowerPoint Slides.
 
 ## To do - Beamer:
 
 - Change "template.tex" for a better example.
-- Improve the quality of the logo.
+- Fix title frame position
+- Change the bibliography logos to the color scheme
 - Much more... 
 
 ## Poster:
