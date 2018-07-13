@@ -260,9 +260,16 @@
 
 \setbeamercolor{Portada2}{fg=logo,bg=background}
 
+\setbeamercolor{plainc}{fg=blu,bg=white}
+
 \setbeamertemplate{background} {
 	\ifbeamer@plainframe%
-    %
+    	
+    	\begin{beamercolorbox}[ht=\paperheight,wd=\paperwidth, center]{plainc}
+    		
+
+    		
+    	\end{beamercolorbox}
   \else
 		\ifnum\c@framenumber=1 % Portada
 		
